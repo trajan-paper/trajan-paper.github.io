@@ -155,3 +155,78 @@ body {
 #interpolation-image-wrapper img {
   border-radius: 5px;
 }
+
+
+  .image-container {
+    display: flex; /* Enable flexbox for horizontal alignment */
+    justify-content: space-between; /* Distribute space evenly between images */
+  }
+
+  .image-container img {
+    width: 28%; /* Adjust as needed for image width */
+    height: auto; /* Maintain aspect ratio */
+    /*border: 1px solid #ccc; Optional: Add a border */
+    box-sizing: border-box; /* Include padding and border in the element's total width and height */
+  }
+
+  .video-container {
+      display: flex;
+      flex-direction: row; /* Explicitly set the direction to row */
+      justify-content: flex-start; /* Align items to the start and let them flow */
+      align-items: flex-start; /* Align items to the top within the row */
+      overflow-x: auto; /* Enable horizontal scrolling if content overflows */
+      white-space: nowrap; /* Prevent videos from wrapping to the next line */
+      padding: 10px; /* Add some padding around the video container */
+    }
+
+    .video-item {
+      text-align: center;
+      margin-right: 20px; /* Add spacing between videos */
+    }
+
+    /* Remove margin from the last video item to avoid extra space */
+    .video-item:last-child {
+      margin-right: 0;
+    }
+
+    video {
+      max-width: 100%; /* Make videos responsive within their individual container */
+      height: auto;
+      display: block; /* Prevent extra space below inline elements */
+    }
+
+    .caption {
+      margin-top: 5px;
+      font-size: 0.9em;
+      color: #555;
+    }
+
+    /* Optional: Adjust video dimensions if needed */
+    .video-item video {
+      width: 320px; /* Set a fixed width for each video */
+      height: auto; /* Maintain aspect ratio */
+    }
+
+  .image-container-50 {
+    display: flex; /* Enable flexbox for horizontal alignment */
+    justify-content: space-between; /* Distribute space evenly between images */
+  }
+
+  .image-container-50 img {
+    width: 45%; /* Adjust as needed for image width */
+    height: auto; /* Maintain aspect ratio */
+    /*border: 0px solid #ccc; Optional: Add a border */
+    box-sizing: border-box; /* Include padding and border in the element's total width and height */
+  }
+
+  .image-container-full {
+    display: flex; /* Enable flexbox for horizontal alignment */
+    justify-content: space-between; /* Distribute space evenly between images */
+  }
+
+  .image-container-full img {
+    width: auto; /* Adjust as needed for image width */
+    height: auto; /* Maintain aspect ratio */
+    /*border: 0px solid #ccc; Optional: Add a border */
+    box-sizing: border-box; /* Include padding and border in the element's total width and height */
+  }
