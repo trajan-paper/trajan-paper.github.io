@@ -93,7 +93,7 @@
                   </a>
                 </span>
                 <span class="link-block">
-                  <a href="https://github.com/deepmind/tapnet/trajan"
+                  <a href="https://github.com/deepmind/tapnet/"
                     class="external-link button is-normal is-rounded is-dark">
                     <span class="icon">
                       <i class="fab fa-github"></i>
@@ -153,11 +153,160 @@ We show that using point tracks instead of pixel reconstruction or action recogn
             </p>
         </div>
       </div>
+    </div>
 
+      <div class="container is-max-desktop">
+  <div class="columns is-centered has-text-centered">
+    <div class="column is-full">
+      <div class="content">
+
+        <h3 class="title is-3">TRAJAN captures human evaluations of temporal consistency and realism in generated videos</h3>
+        <div class="container">
+          <p>
+            Example videos from the EvalCrafter [3] and VideoPhy [4] datasets covering 15 different generative video models.
+            TRAJAN captures human judgements of motion consistency, appearance consistency, overall realism, and object interaction realism for 100 videos sampled from each of these 15 models better than all alternatives.
+          </p>
+          <div id="results-carousel" class="carousel results-carousel">
+            <!-- First item in the combined carousel -->
+            <div class="item">
+              <div class="image-container-full">
+                <figure>
+                <img src="supplementary/generative/evalcrafter_show_1.gif" alt="Show-1">
+                <figcaption> Show-1 </figcaption>
+              </figure>
+              <figure>
+              <img src="supplementary/generative/evalcrafter_floor33.gif" alt="Floor 33">
+              <figcaption> Floor33 </figcaption>
+            </figure>
+            <figure>
+            <img src="supplementary/generative/evalcrafter_gen2_december.gif" alt="Gen2">
+            <figcaption> Gen2 </figcaption>
+          </figure>
+              </div>
+            </div>
+              <div class="item">
+
+              <div class="image-container-full">
+                <img src="supplementary/generative/CogVideoX-2B.gif" alt="CogVideoX-2B">
+                <img src="supplementary/generative/CogVideoX-5B.gif" alt="CogVideoX-5B">
+                <img src="supplementary/generative/evalcrafter_hotshot.gif" alt="HotShot">
+              </div>
+            </div>
+              <div class="item">
+              <div class="image-container">
+                <img src="supplementary/generative/evalcrafter_modelscope.gif" alt="ModelScope">
+                <img src="supplementary/generative/evalcrafter_MoonValley.gif" alt="MoonValley">
+                <img src="supplementary/generative/evalcrafter_pika_v1_december_1.gif" alt="Pika">
+              </div>
+            </div>
+            <div class="item">
+            <div class="image-container">
+              <img src="supplementary/generative/evalcrafter_videocrafter-v1.0.gif" alt="VideoCrafter">
+              <img src="supplementary/generative/evalcrafter_zeroscope.gif" alt="ZeroScope">
+              <img src="supplementary/generative/lavie.gif" alt="LaVie">
+            </div>
+          </div>
+          <div class="item">
+          <div class="image-container">
+            <img src="supplementary/generative/opensora.gif" alt="OpenSora">
+            <img src="supplementary/generative/svd.gif" alt="SVD">
+            <img src="supplementary/generative/vc2.gif" alt="VC2">
+          </div>
+        </div>
+
+            </div>
+
+          </div>
+          <figure>
+            <img src="supplementary/generative/table.png" alt="Results">
+            <figcaption> Spearman's rank coefficients between human ratings and automated metrics for a subset of videos from EvalCrafter and VideoPhy (higher is better). Inter-rater sigma is the standard deviation of human responses (lower is better). </figcaption>
+          </figure>
+</div>
+</div>
+</div>
+</div>
+
+  <div class="container is-max-desktop">
+
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-full">
+        <div class="content">
+
+          <h3 class="title is-3">Localizing generated video errors in space and time</h3>
+          <div class="container">
+            <p>
+The Average Jaccard (reconstruction quality -- higher AJ means higher reconstruction quality) from TRAJAN can be used to detect generated video inconsistencies at specific points in space and at specific moments in time.
+Here we see that it can be used to detect the moment when the glove's appearance morphs, as well as spatially localize the glove as the problematic location in the video.
+            </p>
+            <div id="results-carousel" class="carousel results-carousel">
+              <!-- First item in the combined carousel -->
+              <div class="item">
+                <div class="image-container">
+                  <img src="supplementary/detailed/detailed_score_1_fullvideo.gif" alt="Full video">
+                  <img src="supplementary/detailed/1_average_jaccard.png" alt="AJ over time" width=70%>
+                  <img src="supplementary/detailed/1_detailed_score.gif" alt="Detailed score">
+                </div>
+              </div>
+                <div class="item">
+
+                <div class="image-container">
+                  <img src="supplementary/detailed/detailed_score_0_fullvideo.gif" alt="Full video">
+                  <img src="supplementary/detailed/0_average_jaccard.png" alt="AJ over time">
+                  <img src="supplementary/detailed/0_detailed_score.gif" alt="Detailed score">
+                </div>
+              </div>
+                <div class="item">
+                <div class="image-container">
+                  <img src="supplementary/detailed/detailed_score_2_fullvideo.gif" alt="Full video">
+                  <img src="supplementary/detailed/2_average_jaccard.png" alt="AJ over time">
+                  <img src="supplementary/detailed/2_detailed_score.gif" alt="Detailed score">
+                </div>
+              </div>
+
+              </div>
+
+            </div>
+            <p>
+              From left to right: full generated video, Average Jaccard (reconstruction quality) over time, Average Jaccard shown for each point track around the <b>most poorly reconstructed</b> moment in time.
+Red indicates <b>worse</b> reconstruction, blue indicates <b>better</b> reconstruction.
+            </p>
+          </div>
+
+        </div>
+      </div>
+    </div>
+    <div class="container is-max-desktop">
+
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-full">
+          <div class="content">
+
+            <h3 class="title is-3">Comparing motion similarities between videos with TRAJAN</h3>
+            <div class="container">
+              <p>
+                A comparison of the motion in a generated video to its real counterpart. Videos are generated with WALT [2].
+                </p>
+              <figure>
+                <img src="supplementary/pairwise/motion_sim.png" alt="Motion similar">
+                <figurecaption>The distance between the real and generated videos of the crowd in the TRAJAN embedding space is <b>low</b> since they have <b>similar motion</b> despite differences in object appearance.
+                </figurecaption>
+              </figure>
+              <figure>
+                <img src="supplementary/pairwise/motion_diff.png" alt="Motion different">
+                <figurecaption>The distance between the real and generated videos of the man in the TRAJAN embedding space is <b>high</b> since they have <b>different motion</b> despite similarities in overall appearance.
+              </figurecaption>
+              </figure>
+
+              </div>
+  </div>
+</div>
+</div>
+</div>
+<div class="container is-max-desktop">
 
             <div class="columns is-centered has-text-centered">
               <div class="column is-full">
-                <h3 class="title is-3">TRAJAN better captures spatiotemporal inconsistencies than several alternatives</h3>
+                <h3 class="title is-3">TRAJAN also identifies synthetic spatiotemporal corruptions than several alternatives</h3>
                   <div class="image-container-full">
                     <figure>
                     <img src="supplementary/corrupted/fig3_elastic_clean.gif" alt="Full video">
@@ -189,153 +338,6 @@ We show that using point tracks instead of pixel reconstruction or action recogn
           </div>
         </div>
 
-        <div class="container is-max-desktop">
-
-          <div class="columns is-centered has-text-centered">
-            <div class="column is-full">
-              <div class="content">
-
-                <h3 class="title is-3">Comparing motion similarities between videos with TRAJAN</h3>
-                <div class="container">
-                  <p>
-                    A comparison of the motion in a generated video to its real counterpart. Videos are generated with WALT [2].
-                    </p>
-                  <figure>
-                    <img src="supplementary/pairwise/motion_sim.png" alt="Motion similar">
-                    <figurecaption>The distance between the real and generated videos of the crowd in the TRAJAN embedding space is <b>low</b> since they have <b>similar motion</b> despite differences in object appearance.
-                    </figurecaption>
-                  </figure>
-                  <figure>
-                    <img src="supplementary/pairwise/motion_diff.png" alt="Motion different">
-                    <figurecaption>The distance between the real and generated videos of the man in the TRAJAN embedding space is <b>high</b> since they have <b>different motion</b> despite similarities in overall appearance.
-                  </figurecaption>
-                  </figure>
-
-                  </div>
-      </div>
-    </div>
-    </div>
-  </div>
-          <div class="container is-max-desktop">
-      <div class="columns is-centered has-text-centered">
-        <div class="column is-full">
-          <div class="content">
-
-            <h3 class="title is-3">TRAJAN captures human evaluations of temporal consistency and realism in generated videos</h3>
-            <div class="container">
-              <p>
-                Example videos from the EvalCrafter [3] and VideoPhy [4] datasets covering 15 different generative video models.
-                TRAJAN captures human judgements of motion consistency, appearance consistency, overall realism, and object interaction realism for 100 videos sampled from each of these 15 models better than all alternatives.
-              </p>
-              <div id="results-carousel" class="carousel results-carousel">
-                <!-- First item in the combined carousel -->
-                <div class="item">
-                  <div class="image-container-full">
-                    <figure>
-                    <img src="supplementary/generative/evalcrafter_show_1.gif" alt="Show-1">
-                    <figcaption> Show-1 </figcaption>
-                  </figure>
-                  <figure>
-                  <img src="supplementary/generative/evalcrafter_floor33.gif" alt="Floor 33">
-                  <figcaption> Floor33 </figcaption>
-                </figure>
-                <figure>
-                <img src="supplementary/generative/evalcrafter_gen2_december.gif" alt="Gen2">
-                <figcaption> Gen2 </figcaption>
-              </figure>
-                  </div>
-                </div>
-                  <div class="item">
-
-                  <div class="image-container-full">
-                    <img src="supplementary/generative/CogVideoX-2B.gif" alt="CogVideoX-2B">
-                    <img src="supplementary/generative/CogVideoX-5B.gif" alt="CogVideoX-5B">
-                    <img src="supplementary/generative/evalcrafter_hotshot.gif" alt="HotShot">
-                  </div>
-                </div>
-                  <div class="item">
-                  <div class="image-container">
-                    <img src="supplementary/generative/evalcrafter_modelscope.gif" alt="ModelScope">
-                    <img src="supplementary/generative/evalcrafter_MoonValley.gif" alt="MoonValley">
-                    <img src="supplementary/generative/evalcrafter_pika_v1_december_1.gif" alt="Pika">
-                  </div>
-                </div>
-                <div class="item">
-                <div class="image-container">
-                  <img src="supplementary/generative/evalcrafter_videocrafter-v1.0.gif" alt="VideoCrafter">
-                  <img src="supplementary/generative/evalcrafter_zeroscope.gif" alt="ZeroScope">
-                  <img src="supplementary/generative/lavie.gif" alt="LaVie">
-                </div>
-              </div>
-              <div class="item">
-              <div class="image-container">
-                <img src="supplementary/generative/opensora.gif" alt="OpenSora">
-                <img src="supplementary/generative/svd.gif" alt="SVD">
-                <img src="supplementary/generative/vc2.gif" alt="VC2">
-              </div>
-            </div>
-
-                </div>
-
-              </div>
-              <figure>
-                <img src="supplementary/generative/table.png" alt="Results">
-                <figcaption> Spearman's rank coefficients between human ratings and automated metrics for a subset of videos from EvalCrafter and VideoPhy (higher is better). Inter-rater sigma is the standard deviation of human responses (lower is better). </figcaption>
-              </figure>
-  </div>
-  </div>
-  </div>
-  </div>
-
-      <div class="container is-max-desktop">
-
-        <div class="columns is-centered has-text-centered">
-          <div class="column is-full">
-            <div class="content">
-
-              <h3 class="title is-3">Localizing generated video errors in space and time</h3>
-              <div class="container">
-                <p>
-The Average Jaccard (reconstruction quality -- higher AJ means higher reconstruction quality) from TRAJAN can be used to detect generated video inconsistencies at specific points in space and at specific moments in time.
-Here we see that it can be used to detect the moment when the glove's appearance morphs, as well as spatially localize the glove as the problematic location in the video.
-                </p>
-                <div id="results-carousel" class="carousel results-carousel">
-                  <!-- First item in the combined carousel -->
-                  <div class="item">
-                    <div class="image-container">
-                      <img src="supplementary/detailed/detailed_score_1_fullvideo.gif" alt="Full video">
-                      <img src="supplementary/detailed/1_average_jaccard.png" alt="AJ over time" width=70%>
-                      <img src="supplementary/detailed/1_detailed_score.gif" alt="Detailed score">
-                    </div>
-                  </div>
-                    <div class="item">
-
-                    <div class="image-container">
-                      <img src="supplementary/detailed/detailed_score_0_fullvideo.gif" alt="Full video">
-                      <img src="supplementary/detailed/0_average_jaccard.png" alt="AJ over time">
-                      <img src="supplementary/detailed/0_detailed_score.gif" alt="Detailed score">
-                    </div>
-                  </div>
-                    <div class="item">
-                    <div class="image-container">
-                      <img src="supplementary/detailed/detailed_score_2_fullvideo.gif" alt="Full video">
-                      <img src="supplementary/detailed/2_average_jaccard.png" alt="AJ over time">
-                      <img src="supplementary/detailed/2_detailed_score.gif" alt="Detailed score">
-                    </div>
-                  </div>
-
-                  </div>
-
-                </div>
-                <p>
-                  From left to right: full generated video, Average Jaccard (reconstruction quality) over time, Average Jaccard shown for each point track around the <b>most poorly reconstructed</b> moment in time.
-Red indicates <b>worse</b> reconstruction, blue indicates <b>better</b> reconstruction.
-                </p>
-              </div>
-
-            </div>
-          </div>
-        </div>
 
   </section>
 
@@ -368,7 +370,7 @@ Red indicates <b>worse</b> reconstruction, blue indicates <b>better</b> reconstr
         <a class="icon-link" href="TODO">
           <i class="fas fa-file-pdf"></i>
         </a>
-        <a class="icon-link" href="https://github.com/deepmind/tapnet/trajan" class="external-link" disabled>
+        <a class="icon-link" href="https://github.com/deepmind/tapnet" class="external-link" disabled>
           <i class="fab fa-github"></i>
         </a>
       </div>
@@ -379,7 +381,7 @@ Red indicates <b>worse</b> reconstruction, blue indicates <b>better</b> reconstr
               This website is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International License</a>.
             </p>
             <p>
-              This means you are free to borrow the <a href="https://github.com/moog-paper/moog-paper.github.io">source code</a> of this website, which itelf is a fork of <a href="https://github.com/nerfies/nerfies.github.io">Nerfies</a>. We just ask that you link back to this page in the footer.
+              This means you are free to borrow the <a href="https://github.com/trajan-paper/trajan-paper.github.io">source code</a> of this website, which itelf is a fork of <a href="https://github.com/nerfies/nerfies.github.io">Nerfies</a>. We just ask that you link back to this page in the footer.
             </p>
           </div>
         </div>
